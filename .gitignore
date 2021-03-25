@@ -1,0 +1,5 @@
+Title Ignore Folder
+
+git add .scannerwork .gitignore -f
+git add C:\workspace\my-covidAngular\covid-app\node_modules .gitignore -f
+git add .gitignore -f
