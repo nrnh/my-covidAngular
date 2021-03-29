@@ -2,7 +2,6 @@
   <h2>
     Daily Covid Update - {{covidTotalDaily}}
   </h2>
-
   <!-- Add record starts  -->
   <br><br><br>
   <legend style="color:black;font-weight:bold;">Section A. Add New Record</legend>
@@ -64,4 +63,25 @@
   </form>
   <!-- Put record Ends  -->
 
+  <!-- Add Post starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section D. Add Post Record</legend>
+
+    <label for="Description">Description</label>
+    <input type="text" id="desc" [(ngModel)]="postaddDesc.description" name="desc">
+    <p></p>
+
+    <input type="submit" value="Post" (click)="postDesc()">
+  <!-- Add Post ends  -->
+
+  <!-- Delete SOAP starts  -->
+  <br><br><br>
+  <legend style="color:black;font-weight:bold;">Section E. Delete SOAP Record</legend>
+
+  <label for="Description">Description</label>
+  <input type="text" id="desc" [(ngModel)]="descObject.description" name="desc">
+  <p></p>
+
+  <input type="submit" value="Delete" (click)="deleteSoap()">
+  <!-- Delete SOAP ends  -->
 </div>

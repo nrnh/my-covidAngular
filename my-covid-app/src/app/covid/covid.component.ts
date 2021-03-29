@@ -26,6 +26,10 @@ export class CovidComponent implements OnInit {
 
   public updateDesc: any;
 
+  public postaddDesc: any;
+
+  public deleteObj : any;
+
   constructor(
     private httpClient: HttpClient,
     public covidApiService: CovidApiService,
@@ -36,11 +40,12 @@ export class CovidComponent implements OnInit {
   ngOnInit(): void {
     this.descObject = {};
     this.updateDesc = {};
+    this.postaddDesc = {};
+    this.deleteObj = {};
     this.getCovid();
     this.getCovidDesc();
-
     console.log("Covid Component Inited");
-    console.log("Total of Description Column Row --->" + this.descObject.length);
+    
   }
 
   getCovid(): any {
@@ -57,12 +62,12 @@ export class CovidComponent implements OnInit {
     return this.covidTotalDaily;
   }
 
-  getCovidDesc(): any {
+  async getCovidDesc(): Promise<any> {
     this.covidApiService.getCovidDesc().subscribe((data: any) => {
       console.log(data);
       this.covidTotalDesc = data;
+      console.log("Total of Description Column Row --->" + this.covidTotalDesc.length);
     });
-
     return this.covidTotalDesc;
   }
 
@@ -88,8 +93,6 @@ export class CovidComponent implements OnInit {
           this.getCovidDesc();
         });
     }
-
-
   }
 
   addDesc() {
@@ -118,5 +121,30 @@ export class CovidComponent implements OnInit {
       resolve => {
         this.getCovidDesc();
       });
+  }
+
+  // TODO: Practical 7 - complete the implementation below
+  // It should have a promise sync function 
+
+  postDesc() {
+
+    this.covidApiService.postDesc(this.postaddDesc).then(
+      resolve => {
+        this.getCovidDesc();
+      });
+  }
+
+  deleteSoap() {
+    console.log("covidTotalDesc length-->" + this.covidTotalDesc.length);
+
+    if (this.covidTotalDesc.length == 0) {
+      this.confirmationDialogService.confirm(GlobalConstants.errorMessageFE, "List is Empty");
+    }
+    else {
+      this.covidApiService.deleteSoap(this.descObject.description).then(
+        resolve => {
+          this.getCovidDesc();
+        });
+    }
   }
 }
