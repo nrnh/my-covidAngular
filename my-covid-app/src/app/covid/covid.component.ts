@@ -58,11 +58,10 @@ export class CovidComponent implements OnInit {
         this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
       }
     );
-
     return this.covidTotalDaily;
   }
 
-  async getCovidDesc(): Promise<any> {
+  getCovidDesc(): any {
     this.covidApiService.getCovidDesc().subscribe((data: any) => {
       console.log(data);
       this.covidTotalDesc = data;
@@ -127,7 +126,6 @@ export class CovidComponent implements OnInit {
   // It should have a promise sync function 
 
   postDesc() {
-
     this.covidApiService.postDesc(this.postaddDesc).then(
       resolve => {
         this.getCovidDesc();

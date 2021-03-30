@@ -1,0 +1,87 @@
+<div class="container" role="main">
+    <h2>
+        Daily Covid Update - {{covidTotalDaily}}
+    </h2>
+
+    <!-- Add record starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section A. Add New Bonus Record</legend>
+
+    <label for="Description">Description</label>
+    <input type="text" id="desc" [(ngModel)]="newBonus" name="desc">
+    <p></p>
+
+    <input type="submit" value="Add" (click)="addBonus()">
+    <!-- Add record ends  -->
+
+    <!-- Delete record starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section B. Delete Bonus Record</legend>
+    <legend style="color:black;font-weight:bold;">Select Records to view or Delete</legend>
+    <div *ngIf="bonusTotal != undefined">
+
+        <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectBonus($event)" multiple="multiple">
+        <option *ngFor="let table of bonusTotal" [value]="table">
+            {{table.description}}
+        </option>
+        </select>
+    </div>
+
+    <form>
+        <div *ngIf="bonusObject != undefined" class="form-group">
+        <label>ID</label>
+        <input type="text" id="id" [(ngModel)]="bonusObject.id" name="id" disabled>
+        <label>Description</label>
+        <input type="text" id="desc" [(ngModel)]="bonusObject.description" name="desc" disabled>
+        <p></p>
+        <input type="submit" value="Delete" (click)="deleteBonus()">
+        </div>
+    </form>
+    <!-- Delete record Ends  -->
+
+    <!-- Put record starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section C. Update Bonus Record</legend>
+    <legend style="color:black;font-weight:bold;">Select Records to Update</legend>
+    <div *ngIf="bonusTotal != undefined">
+        <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectUpdateBonus($event)" multiple="multiple">
+        <option *ngFor="let table of bonusTotal" [value]="table">
+            {{table.description}}
+        </option>
+        </select>
+    </div>
+
+    <form>
+        <div *ngIf="bonusObject != undefined" class="form-group">
+        <label>ID</label>
+        <input type="text" id="id" [(ngModel)]="updatePutBonus.id" name="id" disabled >
+        <label>Description</label>
+        <input type="text" id="desc" [(ngModel)]="updatePutBonus.description" name="desc" >
+        <p></p>
+        <input type="submit" value="Update" (click)="putBonus()">
+        </div>
+    </form>
+    <!-- Put record Ends  -->
+
+    <!-- Add Post starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section D. Add Post Bonus Record</legend>
+
+    <label for="Description">Description</label>
+    <input type="text" id="desc" [(ngModel)]="addPostBonus.description" name="desc">
+    <p></p>
+
+    <input type="submit" value="Post" (click)="postBonus()">
+    <!-- Add Post ends  -->
+
+    <!-- Delete SOAP starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section E. Delete SOAP Bonus Record</legend>
+
+    <label for="Description">Description</label>
+    <input type="text" id="desc" [(ngModel)]="bonusObject.description" name="desc">
+    <p></p>
+
+    <input type="submit" value="Delete" (click)="deleteBonusSoap()">
+    <!-- Delete SOAP ends  -->
+</div>
