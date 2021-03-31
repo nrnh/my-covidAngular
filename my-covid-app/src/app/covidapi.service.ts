@@ -33,6 +33,19 @@ export class CovidApiService {
     });
   }
 
+  public deleteDuplicate(): Promise<any> {
+    return new Promise((resolve) => {
+      return this.httpClient.delete(`http://localhost:8081/covid/delete/duplicate`).subscribe((data: any) => {
+        console.log(data);
+        resolve(data);
+      },
+      (error) => {
+        console.log(error);
+        this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
+      })
+    });
+  }
+
   public addDesc(desc: string): Promise<any> {
     return new Promise((resolve) => {
       return this.httpClient.get(`http://localhost:8081/covid/add?desc=` + desc).subscribe((data: any) => {

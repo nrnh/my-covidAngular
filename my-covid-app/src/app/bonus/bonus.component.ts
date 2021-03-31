@@ -9,7 +9,7 @@ import { CovidApiService } from '../covidapi.service';
   selector: 'app-bonus',
   providers: [CovidApiService],
   templateUrl: './bonus.component.html',
-  styleUrls: ['./bonus.component.css']
+  styleUrls: ['../share/css/share.component.css']
 })
 export class BonusComponent implements OnInit {
 

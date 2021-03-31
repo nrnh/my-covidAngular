@@ -1,0 +1,26 @@
+<div class="container" role="main">
+  <!-- Delete SOAP starts  -->
+  <br>
+  <legend style="color:black;font-weight:bold;">Section E. Delete SOAP Record</legend>
+  <div *ngIf="covidTotalDesc != undefined">
+
+    <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectDesc($event)" multiple="multiple">
+      <option *ngFor="let table of covidComponent.covidTotalDesc" [value]="table">
+        {{table.description}}
+      </option>
+    </select>
+  </div>
+  <label for="Description">Description</label>
+  <input type="text" id="desc" [(ngModel)]="descObject.description" name="desc">
+  <p></p>
+
+  <input type="submit" value="Delete" (click)="deleteSoap()">
+  <!-- Delete SOAP ends  -->
+
+  <!-- Remove duplicate description starts  -->
+  <br><br><br>
+  <legend style="color:black;font-weight:bold;">Section F. Remove Duplicate Description</legend>
+  <br><br>
+  <input type="submit" value="Remove" (click)="deleteDuplicate()">
+  <!-- Remove duplicate description ends  -->
+</div>

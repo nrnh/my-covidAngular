@@ -12,6 +12,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
 import { HelloComponent } from './hello/hello.component';
 import { BonusComponent } from './bonus/bonus.component';
+import { CovidDeleteComponent } from './covid-delete/covid-delete.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BonusComponent } from './bonus/bonus.component';
     ConfirmationDialogComponent,
     HelloComponent,
     BonusComponent,
+    CovidDeleteComponent,
   ],
   imports: [
     FormsModule,

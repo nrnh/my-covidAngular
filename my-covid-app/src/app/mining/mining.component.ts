@@ -8,7 +8,7 @@ import { MiningService } from '../mining.service';
 @Component({
     selector: 'app-mining',
     templateUrl: './mining.component.html',
-    styleUrls: ['./mining.component.css'],
+    styleUrls: ['../share/css/share.component.css'],
 })
 
 export class MiningComponent implements OnInit {

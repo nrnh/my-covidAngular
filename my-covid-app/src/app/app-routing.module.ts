@@ -5,6 +5,7 @@ import { CovidComponent } from './covid/covid.component';
 import { HelloComponent } from './hello/hello.component';
 import { HomeComponent } from './home/home.component';
 import { MiningComponent } from './mining/mining.component';
+import { CovidDeleteComponent } from './covid-delete/covid-delete.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hello', component: HelloComponent },
   { path: 'mining', component: MiningComponent },
-  { path: 'bonus', component: BonusComponent }
+  { path: 'bonus', component: BonusComponent },
+  { path: 'covid-delete', component: CovidDeleteComponent }
 
 ];
 @NgModule({
