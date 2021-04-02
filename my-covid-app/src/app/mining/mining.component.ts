@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { GlobalConstants } from 'src/environments/GlobalConstants';
-import { GlobalMethods } from 'src/environments/GlobalMethods';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { MiningService } from '../mining.service';
 
@@ -20,8 +18,10 @@ export class MiningComponent implements OnInit {
         private confirmationDialogService: ConfirmationDialogService
     ) {}
     
-    ngOnInit(): void {}
-
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+    
     public getMining(): any {
       this.httpClient.get(`http://localhost:8091/covid/mining/my`, { responseType: 'text' })
         .subscribe((data: any) => 

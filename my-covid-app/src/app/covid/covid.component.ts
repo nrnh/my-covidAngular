@@ -121,7 +121,7 @@ export class CovidComponent implements OnInit {
       });
   }
 
-  // TODO: Practical 7 - complete the implementation below
+  // Practical 7 - complete the implementation below
   // It should have a promise sync function 
 
   postDesc() {

@@ -6,7 +6,7 @@ import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { CovidComponent } from '../covid/covid.component';
 
 @Component({
-  selector: 'app-covid',
+  selector: 'app-covid-delete',
   providers: [CovidApiService, CovidComponent],
   styleUrls: ['../share/css/share.component.css'],
   templateUrl: './covid-delete.component.html',
